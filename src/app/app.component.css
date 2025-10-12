@@ -1,0 +1,8 @@
+.desactivado {
+  background-color: grey;
+  color: white;
+}
+.activado {
+  background-color: rgb(92, 184, 50);
+  color: white;
+}

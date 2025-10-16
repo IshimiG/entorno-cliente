@@ -3,11 +3,12 @@ import { RouterOutlet } from '@angular/router';
 import { ArticleComponent } from './components/article/article.component';
 import { BookComponent } from './components/book/book.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FrutasComponent } from './components/frutas/frutas.component';
+import { TrabajadoresComponent } from "./components/trabajadores/trabajadores";
+import { TRABAJADORES } from './model/trabajador';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ArticleComponent, BookComponent, HttpClientModule],
+  imports: [RouterOutlet, ArticleComponent, BookComponent, HttpClientModule, TrabajadoresComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
@@ -21,4 +22,7 @@ export class AppComponent {
   }
 
   title = 'project1';
+
+  listaTrabajadores = TRABAJADORES
+
 }

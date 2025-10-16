@@ -1,0 +1,9 @@
+<!-- interpolar la variable titulo en el h3 -->
+<h3 align="center"> {{titulo}} </h3><br>
+  <div class="row row-cols-1 row-cols-md-6">
+@for (trabajador of trabajadores; track trabajadores) {
+    <app-trabajador 
+    [trabajador]="trabajador">
++    </app-trabajador>
+  }
+  </div>  

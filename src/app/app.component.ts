@@ -6,9 +6,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { TrabajadoresComponent } from "./components/trabajadores/trabajadores";
 import { TRABAJADORES } from './model/trabajador';
 
+import { ObservablesComponent } from './components/observables/observables';
+
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ArticleComponent, BookComponent, HttpClientModule, TrabajadoresComponent],
+  imports: [RouterOutlet, ArticleComponent, BookComponent, HttpClientModule, TrabajadoresComponent, ObservablesComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

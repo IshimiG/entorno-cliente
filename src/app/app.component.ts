@@ -9,10 +9,11 @@ import { TRABAJADORES } from './model/trabajador';
 import { ObservablesComponent } from './components/observables/observables';
 import { Contador1Component } from "./components/contador1/contador1.component";
 import { Contador2Component } from "./components/contador2/contador2.component";
+import { HeaderComponent } from "./components/header/header";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ArticleComponent, BookComponent, HttpClientModule, TrabajadoresComponent, ObservablesComponent, Contador1Component, Contador2Component],
+  imports: [RouterOutlet, ArticleComponent, BookComponent, HttpClientModule, TrabajadoresComponent, ObservablesComponent, Contador1Component, Contador2Component, HeaderComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

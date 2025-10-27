@@ -1,0 +1,29 @@
+<div class="container">
+    <h2>Articulos</h2>
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <p>Todos nuestros articulos</p>
+        <button class="btn btn-success">Nuevo</button>
+    </div>
+    <table class="table table-stripped ms-4 me-6">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>nombre</th>
+                <th>categoria</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (article of articles; track articles) {
+                <tr>
+                    <td>{{ article.id }}</td>
+                    <td>{{ article.nombre }}</td>
+                    <td>{{ article.categoria }}</td>
+                    <a class="btn btn-success active" style="margin-block: 4px; margin-inline: 6px;" routerLink="/articulo/{{article.id}}">Ver</a>
+                    <button class="btn btn-danger active" style="margin-block: 4px; margin-inline: 6px;">Borrar</button>
+                    <button class="btn btn-primary active" style="margin-block: 4px; margin-inline: 6px;">Modificar</button>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

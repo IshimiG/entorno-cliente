@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { ARTICLES } from '../../model/article';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-article',
@@ -9,6 +10,13 @@ import { ARTICLES } from '../../model/article';
 })
 export class ArticleComponent {
   articles=ARTICLES;
+
+  constructor(private router: Router) { }  // <-- inyección correcta
+  
+  volver() {
+    this.router.navigate(["/articulos"])
+  }
+
   methodForArticles() {
     this.articles.forEach(article => {
       console.log(article.nombre + " " + article.precio);

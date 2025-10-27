@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Article } from '../../model/article';
 
 @Injectable({
   providedIn: 'root'
@@ -6,4 +7,24 @@ import { Injectable } from '@angular/core';
 export class ArticlesService {
 
   constructor() { }
+
+  getArticulos() {
+
+  }
+
+  getArticulo(id: string) {
+    
+  }
+
+  postArticulo(articulo: Article) {
+
+  }
+
+  putArticulo(articulo: Article) {
+
+  }
+
+  delete(id: string) {
+
+  }
 }

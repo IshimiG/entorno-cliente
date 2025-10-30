@@ -6,7 +6,7 @@
     </div>
     <table class="table table-stripped ms-4 me-6">
         <thead>
-            <tr>
+            <tr style="">
                 <th>id</th>
                 <th>nombre</th>
                 <th>categoria</th>
@@ -14,15 +14,16 @@
         </thead>
         <tbody>
             @for (article of articles; track articles) {
-                <tr>
+                <tr style="">
                     <td>{{ article.id }}</td>
                     <td>{{ article.nombre }}</td>
                     <td>{{ article.categoria }}</td>
-                    <a class="btn btn-success active" style="margin-block: 4px; margin-inline: 6px;" routerLink="/articulo/{{article.id}}">Ver</a>
-                    <button class="btn btn-danger active" style="margin-block: 4px; margin-inline: 6px;">Borrar</button>
-                    <button class="btn btn-primary active" style="margin-block: 4px; margin-inline: 6px;">Modificar</button>
-
-                </tr>
+                    <div style="display: flex; gap: 10px;">
+                        <a class="btn btn-success active" style="" routerLink="/articulo/{{article.id}}">Ver</a>
+                        <button (click)="delete(article.id)" class="btn btn-danger active" style="">Borrar</button>
+                        <button class="btn btn-primary active" style="">Modificar</button>
+                    </div>
+               </tr>
             }
         </tbody>
     </table>

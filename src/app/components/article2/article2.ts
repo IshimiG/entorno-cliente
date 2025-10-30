@@ -1,6 +1,7 @@
-import { Component } from "@angular/core";
-import { ARTICLES } from "../../model/article";
-import { RouterLink } from "@angular/router";
+import { Component, inject, Inject } from "@angular/core";
+import { Article, ARTICLES } from "../../model/article";
+import { ActivatedRoute, Router, RouterLink } from "@angular/router";
+import { ArticlesService } from "../../service/articles/articles.service";
 
 @Component({
     selector: 'app-article2',
@@ -9,6 +10,19 @@ import { RouterLink } from "@angular/router";
 })
 
 export class Article2Component {
-    articles=ARTICLES
+    articles:Article[] = ARTICLES;
 
+    // constructor(
+    //     private servicio: ArticlesService,
+    // ) { }
+
+    servicio=inject(ArticlesService)
+
+    ngOnInit() {
+        this.servicio.getArticulos();
+    }
+
+    delete(id: string) {
+        this.servicio.delete(id)
+    }
 }

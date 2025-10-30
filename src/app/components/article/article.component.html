@@ -26,15 +26,15 @@
 <main style="display: flex; justify-content: center; margin-top: 100px;">
   <div class="card " style="width: 18rem; border: 0px; box-shadow: 1px 5px 10px 6px gray;">
     <div class="card-body">
-        <img src="images/{{articles[3].id}}.jpg" class="card-img-top">
-        <h5 class="card-title">{{articles[3].nombre}}</h5>
-        <p class="card-text">{{articles[3].descripcion}}</p>
+        <img src="images/{{article.id}}.jpg" class="card-img-top">
+        <h5 class="card-title">{{article.nombre}}</h5>
+        <p class="card-text">{{article.descripcion}}</p>
         <b>
-            <p class="card-text text-center">{{articles[3].precio}}$</p>
+            <p class="card-text text-center">{{article.precio}}$</p>
         </b>
     </div>
     <div style="display: flex; justify-content: space-between; margin: 10px;">
-      <button class="btn btn-success" [disabled]="articles[3].unidades == 0?true:false">Comprar</button>
+      <button class="btn btn-success" [disabled]="article.unidades == 0?true:false">Comprar</button>
       <a class="btn btn-primary" (click)="volver()">Volver</a>
     </div>
   </div>

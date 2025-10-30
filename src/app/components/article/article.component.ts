@@ -1,6 +1,7 @@
-import { Component, Inject } from '@angular/core';
-import { ARTICLES } from '../../model/article';
-import { Router } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Article, ARTICLES } from '../../model/article';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ArticlesService } from '../../service/articles/articles.service';
 
 @Component({
   selector: 'app-article',
@@ -9,28 +10,41 @@ import { Router } from '@angular/router';
   styleUrl: './article.component.css'
 })
 export class ArticleComponent {
-  articles=ARTICLES;
+  article!:Article;
 
-  constructor(private router: Router) { }  // <-- inyección correcta
-  
+
+  // constructor(private router: Router,
+  //   private miRutaActiva: ActivatedRoute,
+  //   private servicio: ArticlesService
+  // ) { }  // <-- inyección correcta
+
+  router=inject(Router)
+  miRutaActiva=inject(ActivatedRoute)
+  servicio=inject(ArticlesService)
+
+
   volver() {
     this.router.navigate(["/articulos"])
   }
 
-  methodForArticles() {
-    this.articles.forEach(article => {
-      console.log(article.nombre + " " + article.precio);
+  ngOnInit() {
+    this.miRutaActiva.params.subscribe(params=>this.article=this.servicio.getArticulo(params['id']))
+  }
+
+  // methodForArticles() {
+  //   this.articles.forEach(article => {
+  //     console.log(article.nombre + " " + article.precio);
   
-    });
-  }
+  //   });
+  // }
 
-  methodOrderbyPrice() {
-    this.articles.sort((a, b) => a.precio - b.precio);
-    console.log(this.articles);
-  }
+  // methodOrderbyPrice() {
+  //   this.articles.sort((a, b) => a.precio - b.precio);
+  //   console.log(this.articles);
+  // }
 
-  methodFilterByCategory(category: string) {
-    const filteredArticles = this.articles.filter(article => article.categoria === category);
-    console.log(filteredArticles);
-  }
+  // methodFilterByCategory(category: string) {
+  //   const filteredArticles = this.articles.filter(article => article.categoria === category);
+  //   console.log(filteredArticles);
+  // }
 }

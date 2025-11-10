@@ -1,5 +1,5 @@
 import { Component, inject, Inject } from "@angular/core";
-import { Article, ARTICLES } from "../../model/article";
+import { Article } from "../../model/article";
 import { ActivatedRoute, Router, RouterLink } from "@angular/router";
 import { ArticlesService } from "../../service/articles/articles.service";
 
@@ -10,7 +10,7 @@ import { ArticlesService } from "../../service/articles/articles.service";
 })
 
 export class Article2Component {
-    articles:Article[] = ARTICLES;
+    articles!:Article[];
 
     // constructor(
     //     private servicio: ArticlesService,

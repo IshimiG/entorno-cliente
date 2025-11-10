@@ -21,6 +21,7 @@ export class LoginService {
     if(this.getUsers().find(a => a.name === name && a.password === psswd)) {
       this.isLogged = true;
       this.usr = name;
+      this._name.next(name)
     }
     else this.isLogged = false;
   }
@@ -30,6 +31,7 @@ export class LoginService {
   }
 
   unlog() {
+    this._name.next("")
     this.isLogged = false
   }
 }

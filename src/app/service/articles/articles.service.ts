@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Article, ARTICLES } from '../../model/article';
+import { Article } from '../../model/article';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +8,9 @@ export class ArticlesService {
 
   constructor() { }
 
-  article:Article[]=ARTICLES
+  article!: Article[];
+  url = 'http://localhost:3000/articles';
+
 
   getArticulos() {
     return this.article

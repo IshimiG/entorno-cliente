@@ -14,11 +14,11 @@ export class HeaderComponent {
     router=inject(Router)
 
     log=inject(LoginService)
-    sub !: Subscription;
+    sub!: Subscription;
 
     ngOnInit() {
-        this.sub = this.log.$name.subscribe(
-            {next: a => this.name = a}
+        this.sub = this.log.$name.subscribe({
+            next: a => this.name = a}
         )
     }
 

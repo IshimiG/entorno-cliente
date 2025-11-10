@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { Article, ARTICLES } from '../../model/article';
+import { Article } from '../../model/article';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ArticlesService } from '../../service/articles/articles.service';
 

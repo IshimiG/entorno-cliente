@@ -13,7 +13,7 @@ import { HeaderComponent } from "./components/header/header";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ArticleComponent, BookComponent, HttpClientModule, TrabajadoresComponent, ObservablesComponent, Contador1Component, Contador2Component, HeaderComponent],
+  imports: [RouterOutlet, HttpClientModule, HeaderComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
